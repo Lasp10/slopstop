@@ -56,7 +56,7 @@ def main():
     if missing:
         names = ", ".join(f"{name} ({eco})" for eco, name in missing)
         reason = (
-            f"slopstop: blocked install — {names} do not exist on the registry. "
+            f"slopstop: blocked install. {names} do not exist on the registry. "
             "This matches the profile of an AI-hallucinated package name (slopsquatting risk): "
             "attackers register plausible-but-fake names that LLMs commonly hallucinate. "
             "Double-check the exact package name before retrying, or confirm you actually "
@@ -75,7 +75,7 @@ def main():
         names = ", ".join(f"{name} ({eco}, published {days}d ago)" for eco, name, days in suspicious)
         print(json.dumps({
             "systemMessage": (
-                f"slopstop warning: {names} — this package exists but was published very recently. "
+                f"slopstop warning: {names}. This package exists but was published very recently. "
                 "Recently-registered packages are a common slopsquatting pattern (registered reactively "
                 "after being observed as an AI hallucination). Verify it's the package you actually meant."
             )
