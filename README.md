@@ -1,6 +1,29 @@
 # slopstop
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-plugin-blueviolet)](https://github.com/Lasp10/slopstop)
+
 A Claude Code plugin that blocks installs of **hallucinated packages** before they run.
+
+## Demo
+
+```console
+$ npm install this-package-does-not-exist-xyz123
+```
+```json
+{
+  "hookSpecificOutput": {
+    "hookEventName": "PreToolUse",
+    "permissionDecision": "deny",
+    "permissionDecisionReason": "slopstop: blocked install — this-package-does-not-exist-xyz123 (npm) do not exist on the registry. This matches the profile of an AI-hallucinated package name (slopsquatting risk): attackers register plausible-but-fake names that LLMs commonly hallucinate. Double-check the exact package name before retrying, or confirm you actually intend to publish/create it yourself."
+  }
+}
+```
+
+```console
+$ npm install express
+# (no output — passes straight through, real package)
+```
 
 ## The problem: slopsquatting
 
