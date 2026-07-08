@@ -1,0 +1,17 @@
+{
+  "name": "slopstop",
+  "owner": {
+    "name": "Ankith G"
+  },
+  "metadata": {
+    "description": "Blocks installs of hallucinated npm/PyPI packages before they run."
+  },
+  "plugins": [
+    {
+      "name": "slopstop",
+      "version": "0.1.0",
+      "source": ".",
+      "description": "Blocks installs of hallucinated (nonexistent) npm/PyPI packages before they run, closing the slopsquatting gap left by autonomous coding agents."
+    }
+  ]
+}
