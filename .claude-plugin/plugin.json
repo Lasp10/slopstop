@@ -1,0 +1,9 @@
+{
+  "name": "slopstop",
+  "version": "0.1.0",
+  "description": "Blocks installs of hallucinated (nonexistent) npm/PyPI packages before they run, closing the slopsquatting gap left by autonomous coding agents.",
+  "author": {
+    "name": "Ankith G"
+  },
+  "homepage": "https://github.com/Lasp10/slopstop"
+}
